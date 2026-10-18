@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khrystyna Ivaniv</title>
+<meta name="description" content="Khrystyna Ivaniv — Software / AI Engineer. Python, cloud, FinOps and AI integration.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✳️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1d1f23;
+    --muted: #6a6f78;
+    --line: #e6e7ea;
+    --badge: #eef1f6;
+    --badge-text: #3b4a63;
+    --link: #2d5bd7;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16181c;
+      --text: #e8e9ec;
+      --muted: #9a9fa8;
+      --line: #2b2e34;
+      --badge: #242833;
+      --badge-text: #b9c6dc;
+      --link: #8aa8ff;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16181c; --text: #e8e9ec; --muted: #9a9fa8; --line: #2b2e34;
+    --badge: #242833; --badge-text: #b9c6dc; --link: #8aa8ff; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  :root {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 72px 24px 48px; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 3px; }
+  img { max-width: 100%; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 48px; }
+  .avatar {
+    position: relative;
+    width: 128px; height: 128px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--badge);
+    color: var(--badge-text);
+    display: grid; place-items: center;
+    font-family: var(--serif);
+    font-size: 52px;
+    overflow: hidden;
+  }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(42px, 8vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .tagline { color: var(--muted); margin: 0 auto 18px; max-width: 34em; }
+  .links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .links a {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .links a:hover { border-color: var(--link); color: var(--link); text-decoration: none; }
+
+  .intro p { margin: 0 0 1em; }
+
+  /* Sections */
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 34px;
+    margin: 56px 0 8px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .entry {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 4px 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .entry:last-child { border-bottom: 0; }
+  .when { color: var(--muted); font-size: 15px; padding-top: 3px; }
+  .head { display: flex; gap: 14px; align-items: flex-start; }
+  .logo {
+    flex: none;
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--badge);
+    color: var(--badge-text);
+    display: grid; place-items: center;
+    font-weight: 600; font-size: 15px;
+  }
+  h3 { font-size: 18px; font-weight: 600; margin: 0; line-height: 1.35; }
+  .org { color: var(--muted); font-size: 15px; margin: 2px 0 0; }
+  .entry ul { margin: 12px 0 0; padding-left: 18px; }
+  .entry li { margin-bottom: 6px; }
+  .entry li::marker { color: var(--muted); }
+  .entry p.desc { margin: 12px 0 0; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .tags span {
+    background: var(--badge);
+    color: var(--badge-text);
+    border-radius: 6px;
+    padding: 4px 11px;
+    font-size: 15px;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 560px) {
+    main { padding-top: 48px; }
+    .entry { grid-template-columns: 1fr; }
+    .when { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <div class="avatar" aria-hidden="true">
+      KI
+      <!-- Поклади своє фото в папку assets з назвою me.jpg -->
+      <img src="assets/me.jpg" alt="" onerror="this.remove()">
+    </div>
+    <h1>Khrystyna Ivaniv</h1>
+    <p class="tagline">Software / AI Engineer building cloud integrations, cost analytics and AI-powered features · Artificial Intelligence student at Lviv Polytechnic</p>
+    <nav class="links" aria-label="Contacts">
+      <a href="mailto:khrystyna.ivaniv17@gmail.com">Email</a>
+      <!-- Встав посилання на свій профіль LinkedIn -->
+      <a href="https://www.linkedin.com/in/">LinkedIn</a>
+      <!-- Встав посилання на свій GitHub -->
+      <a href="https://github.com/">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <p>I’m a Python Developer and Artificial Intelligence student at Lviv Polytechnic National University. Most of my work sits where cloud infrastructure meets data and AI: I connect AWS and GCP accounts, process cost data from many platforms, and turn it into budgets, anomaly alerts and AI-driven recommendations.</p>
+    <p>Before that I worked on a Unity-based training simulator for nurses, where I connected an AI module to the simulation logic, and on a course analytics system for IBM on Coursera that combined rule-based and AI-powered metrics. I enjoy building systems that are reliable, scalable and genuinely useful.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <article class="entry">
+      <div class="when">2026 – now</div>
+      <div>
+        <div class="head">
+          <div class="logo" aria-hidden="true">PL</div>
+          <div>
+            <h3>Python Developer</h3>
+            <p class="org">ProfiSea Labs</p>
+          </div>
+        </div>
+        <ul>
+          <li>Built FinOps integrations with third-party platforms, including Coralogix, Datadog, Snowflake, Databricks and BigQuery.</li>
+          <li>Implemented optimized AWS account onboarding using CloudFormation StackSets and automated GCP account connection via Python scripts.</li>
+          <li>Developed budget tracking and cost anomaly detection logic for multi-cloud environments.</li>
+          <li>Created cost analytics dashboards using Apache Superset and delivered AI-powered cost optimization recommendations.</li>
+          <li>Extended an open-source MCP server by forking it and implementing custom functionality to support product-specific AI features.</li>
+          <li>Managed Kubernetes environments, working with pods and namespaces, and troubleshot pod failures to keep services running reliably.</li>
+          <li>Leveraged AI agents and MCP integrations (Grafana, Bitbucket, Jira, Playwright) to accelerate development workflows and automate browser-based testing, applying a Software Factory approach.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="when">2025 – 2026</div>
+      <div>
+        <div class="head">
+          <div class="logo" aria-hidden="true">IN</div>
+          <div>
+            <h3>Unity Developer</h3>
+            <p class="org">Integrated Technology Laboratory LLC (Intela)</p>
+          </div>
+        </div>
+        <ul>
+          <li>Developed the Unity part of an interactive training simulator for nurses, designed to help them practice clinical procedures in a safe virtual environment.</li>
+          <li>Integrated a Python-based AI module into the Unity simulation logic, connecting AI responses with in-game scenarios and user interactions.</li>
+          <li>Implemented gameplay logic, user interactions and training scenarios in C#.</li>
+          <li>Built and integrated UI elements to guide users through simulation steps and provide feedback on their actions.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article class="entry">
+      <div class="when">AI Engineer</div>
+      <div>
+        <div class="head">
+          <div class="logo" aria-hidden="true">CA</div>
+          <div>
+            <h3>Course Analytics</h3>
+            <p class="org">IBM / Coursera</p>
+          </div>
+        </div>
+        <ul>
+          <li>Developed a system for analyzing online courses for IBM on Coursera, evaluating course quality and learner engagement.</li>
+          <li>Implemented rule-based metrics logic using production rules alongside AI-powered metrics for deeper content evaluation.</li>
+          <li>Performed extensive data analysis to process course data, identify patterns and generate actionable insights.</li>
+          <li>Built a text-to-speech module with customizable voice selection and prompt-based control, allowing users to fine-tune tone, pacing and delivery of generated narration.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="when">Backend Developer</div>
+      <div>
+        <div class="head">
+          <div class="logo" aria-hidden="true">SH</div>
+          <div>
+            <h3>Shkandal</h3>
+            <p class="org">News aggregation and monitoring platform</p>
+          </div>
+        </div>
+        <ul>
+          <li>Developed a news aggregation and monitoring platform that collects and tracks news from multiple sources.</li>
+          <li>Designed and implemented an ETL pipeline to extract, transform and load news data from various sources into the system.</li>
+          <li>Built the backend of the platform, including data processing logic and APIs for delivering aggregated news.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+
+    <article class="entry">
+      <div class="when">2024 – 2028</div>
+      <div>
+        <div class="head">
+          <div class="logo" aria-hidden="true">LP</div>
+          <div>
+            <h3>Bachelor’s · Artificial Intelligence</h3>
+            <p class="org">Lviv Polytechnic National University</p>
+          </div>
+        </div>
+        <p class="desc">Relevant coursework: Linear Algebra, Probability Theory, Algorithms and Data Structures, Machine Learning, Fundamentals of Artificial Intelligence, Data Mining and Visualization, Discrete Mathematics, Numerical Methods, Database and Knowledge Base Systems, Object-Oriented Design, Software Architecture and Design, Operating Systems, Computer Networks.</p>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="tags">
+      <span>Python</span>
+      <span>SQL</span>
+      <span>C# / Unity</span>
+      <span>AWS &amp; GCP</span>
+      <span>Kubernetes</span>
+      <span>Git / GitLab / GitHub / Bitbucket</span>
+      <span>Agentic AI &amp; MCP</span>
+      <span>LLM Integration &amp; Prompt Engineering</span>
+      <span>Machine Learning</span>
+      <span>Data Analysis &amp; Visualization</span>
+      <span>Data Warehouses &amp; Analytics Platforms</span>
+      <span>Cloud Cost Optimization (FinOps)</span>
+      <span>Monitoring &amp; Observability</span>
+      <span>Algorithms &amp; Data Structures</span>
+    </div>
+
+    <h2>Languages</h2>
+    <p>Ukrainian — native · English — B2</p>
+  </section>
+
+  <footer>© 2026 Khrystyna Ivaniv · Lviv, Ukraine</footer>
+
+</main>
+</body>
+</html>
